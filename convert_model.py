@@ -1,5 +1,5 @@
 import tensorflow as tf
-import model
+from starrem2k13 import model
 import tensorflowjs as tfjs
 
 G2 = model.Generator()

@@ -75,7 +75,7 @@ def process_image(source_image):
   if mode == 'L':
     total_steps = math.ceil((max_dimension / IMG_SIZE)**2)
     step_size = (1 / total_steps) * 100
-    output = process_channel(input_image, pad_width,input_image.size, step_size)
+    output = process_channel(input_image, pad_width,input_image.size)
     output = output.crop((0, 0, size[0], size[1]))
   elif mode == 'RGB' or mode == 'RGBA':
     total_steps = int(3*(max_dimension / IMG_SIZE)**2)
