@@ -1,3 +1,28 @@
+# Fork description
+
+This fork of starrem2k13 modifies the original repository to function as a standalone module, allowing it to be easily imported and used in other Python projects.
+
+## Usage
+Below is an example of how to use the starrem2k13 module:
+
+```
+from PIL import Image
+from starrem2k13 import starrem2k13
+
+# Load an image
+image = Image.open('samples/sample1.png')
+
+
+# Load the weights of the starrem2k13 model
+starrem2k13.initialize()
+
+# Process the image
+image_without_stars = starrem2k13.process_image(image)
+image_without_stars.show()
+```
+
+---
+
 # Star reduction in deep sky images
 
 Starrem2k13 is a simple tool for removing stars from astronomical images. Starrem2k13 uses a GAN trained on augmented data. It's code was inspired from a [sample at Tensorflow's website](https://www.tensorflow.org/tutorials/generative/pix2pix). The training data consists of only three base images.
@@ -43,7 +68,7 @@ git lfs pull
 > 📍If you run into bandwidth issues with git-lfs, you can simply download weights [from here]( https://github.com/code2k13/starrem2k13/releases/download/v1.0_weights/weights.zip) and unzip to root directory (a folder with weights will
 > get created beside starrem2k13 executable. This folder contains weights required by the program).
 
-Run inference on image. 
+Run inference on image.
 ```shell
 python starrem2k13.py image_with_stars.jpg  image_without_stars.jpg
 ```
@@ -76,9 +101,6 @@ Link to the processed image: [training_data/star_map_base.png](training_data/sta
 
 > [ESO/G. Beccari, CC BY 4.0](https://creativecommons.org/licenses/by/4.0), via Wikimedia Commons
 
-Url: [https://commons.wikimedia.org/wiki/File:The_star_cluster_NGC_3572_and_its_dramatic_surroundings.jpg](https://commons.wikimedia.org/wiki/File:The_star_cluster_NGC_3572_and_its_dramatic_surroundings.jpg) 
+Url: [https://commons.wikimedia.org/wiki/File:The_star_cluster_NGC_3572_and_its_dramatic_surroundings.jpg](https://commons.wikimedia.org/wiki/File:The_star_cluster_NGC_3572_and_its_dramatic_surroundings.jpg)
 
 Direct Link: [https://upload.wikimedia.org/wikipedia/commons/9/95/The_star_cluster_NGC_3572_and_its_dramatic_surroundings.jpg](https://upload.wikimedia.org/wikipedia/commons/9/95/The_star_cluster_NGC_3572_and_its_dramatic_surroundings.jpg)
-
-
-
